@@ -1,0 +1,26 @@
+namespace ClientApp;
+
+enum Gender:byte { Male = 0, Female = 1 }
+
+table Person {
+  Name: string;
+  Age: int;
+  Weight: float;
+  Gender: Gender;
+}
+
+table Group {
+  GroupName: string;
+  AverageAge: float;
+  AverageWeight: float;
+  Names: [string];
+}
+
+union Client { Person, Group }
+
+table Root {
+  Client: Client;
+}
+
+root_type Root;
+
